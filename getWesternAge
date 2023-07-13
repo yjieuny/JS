@@ -1,0 +1,22 @@
+function getWesternAge(birthday) {
+  const today = new Date();
+  const birth = new Date(birthday);
+
+  const yyyy = today.getFullYear() - birth.getFullYear();
+
+  const todayMm = today.getMonth();
+  const birthMm = birth.getMonth();
+  const mm = todayMm - birthMm;
+
+  const dd = today.getDate() - birth.getDate();
+
+  if (yyyy > 0 && todayMm <= birthMm && dd < 0) {
+    return yyyy - 1;
+  } else if (today > birth) {
+    return yyyy;
+  } else {
+    return 0;
+  }
+}
+
+console.log(getWesternAge('1992-7-14'))
