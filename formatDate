@@ -1,0 +1,8 @@
+const formatDate = dates => {
+  return dates.map(date => {
+    const [year, month, day] = date.split ('-');
+    return `${year}년 ${month}월 ${day}일`
+  })
+}
+
+ console.log (formatDate(['2023-07-15']))
