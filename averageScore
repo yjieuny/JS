@@ -1,0 +1,18 @@
+class Student {
+  constructor(name, age, enrolled, score) {
+    this.name = name;
+    this.age = age;
+    this.enrolled = enrolled;
+    this.score = score;
+  }
+}
+const students = [
+  new Student('a', 29, true, 45),
+  new Student('b', 28, false, 80),
+  new Student('c', 30, true, 90),
+  new Student('d', 40, false, 65),
+  new Student('e', 51, true, 88)
+]
+
+const result = students.reduce((acc, curr) => acc + curr.score, 0);
+console.log(result / students.length)
