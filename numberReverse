@@ -1,0 +1,18 @@
+const reverse = x => {
+  const string = String(x);
+  const newArr = Array.from(string);
+  
+  if(newArr[0] === '-') {
+    let arr = newArr.shift();
+    newArr.reverse();
+    newArr.unshift(arr);
+    let str = newArr.join('')
+    return parseInt(str)
+  } else {
+    newArr.reverse();
+    let str = newArr.join('')
+    return parseInt(str)
+  }
+}
+
+console.log(reverse(-1234))   //-4321
