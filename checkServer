@@ -1,0 +1,29 @@
+const productService = require("../services/product.service");
+const { catchAsync } = require("../utils/error");
+
+const getProductDetail = catchAsync(async () => {
+  console.log("컨트롤러 연결 성공");
+  return productService.getProductDetail();
+});
+module.exports = { getProductDetail };
+//컨트롤러 연결 성공
+
+
+const productDao = require("../models/product.dao");
+
+const getProductDetail = async () => {
+  console.log("서비스 연결 성공");
+  return productDao.getProductById();
+};
+module.exports = { getProductDetail };
+//서비스 연결 성공
+
+
+const { AppDataSource } = require("./data.source");
+
+const getProductById = async (id) => {
+  console.log("다오 연결 성공");
+  return AppDataSource;
+};
+module.exports = { getProductById };
+//다오 연결 성공
