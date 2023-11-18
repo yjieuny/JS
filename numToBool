@@ -1,0 +1,11 @@
+const checkNums = nums => {
+  let numToBool = nums.map(num => {
+    if (num >= 100) {
+      return true;
+    } else {
+      return false;
+    }
+  })
+  return numToBool
+}
+console.log(checkNums([100, 1, 99, 999]))   //[true, false, false, true]
